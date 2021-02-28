@@ -4,3 +4,4 @@
 - Ruby: 2.7.1
 - Rails: 6.1.3
 - Database: sqlite
+- Front-end: Bootstrap 4
