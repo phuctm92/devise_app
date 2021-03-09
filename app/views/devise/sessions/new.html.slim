@@ -1,0 +1,31 @@
+#logreg-forms
+  h2.h3.mb-3.font-weight-normal[style="text-align: center"]
+    | Log in
+  .social-login
+    = link_to '#', class: 'btn facebook-btn social-btn'
+      span
+        i.fab.fa-facebook-f
+        |  Sign in with Facebook
+    = link_to '#', class: 'btn google-btn social-btn'
+      span
+        i.fab.fa-google-plus-g
+        |  Sign in with Google+
+  p style='text-align:center'
+    |  OR 
+  = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-signin' }) do |f|
+    = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email address', class: 'form-control', id: 'inputEmail'
+    = f.password_field :password, autocomplete: "current-password", placeholder: 'Password', class: 'form-control', id: 'inputPassword'
+    - if devise_mapping.rememberable?
+      .row.align-items-center.remember
+        = f.check_box :remember_me
+        | Remember me
+    .actions
+      = f.button type: 'submit', class: 'btn btn-success btn-block'
+        i.fas.fa-sign-in-alt
+        |  Sign in
+    /= render "devise/shared/links"
+    = link_to "Forgot your password?", new_password_path(resource_name), id:'forgot_pswd'
+    hr
+    = link_to new_registration_path(resource_name), class: 'btn-signup btn btn-primary btn-block'
+      i.fas.fa-user-plus
+      |  Sign up New Account

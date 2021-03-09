@@ -1,24 +1,26 @@
 nav.navbar.navbar-expand-lg.navbar-light.navbar-bg
   .container
-    a.navbar-brand href="#"
+    = link_to root_path, class:'navbar-brand'
       | DeviseApp
     button.navbar-toggler[type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"]
       span.navbar-toggler-icon
     #navbarNav.collapse.navbar-collapse
       ul.nav.navbar-nav.ml-auto
-        li.nav-item.active
-          a.nav-link[href="#"]
-            | Home 
-        li.nav-item
-          a.nav-link[href="#"]
-            | Message 
-        li.nav-item
-          a.nav-link[href="#"]
-            | Notifications
-        li.nav-item
-          a.nav-link[href="#"]
-            | Profile
-        li.nav-item
-          a.nav-link[href="#"]
-            i.fas.fa-sign-in-alt
-            | &nbsp;Login
+        - if user_signed_in?
+          li.nav-item.active
+            = link_to root_path, class:'nav-link'
+              | Home 
+          li.nav-item
+            a.nav-link[href="#"]
+              | Message 
+          li.nav-item
+            a.nav-link[href="#"]
+              | Notifications
+          li.nav-item
+            a.nav-link[href="#"]
+              | Profile
+        - else
+          li.nav-item
+            = link_to new_user_session_path, class:'nav-link'
+              i.fas.fa-sign-in-alt
+              | &nbsp;Login
