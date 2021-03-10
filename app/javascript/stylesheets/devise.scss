@@ -94,7 +94,7 @@
 .remember{
   margin-top: 5px;
 }
-  
+
 .remember input {
   width: 20px;
   height: 20px;
@@ -135,6 +135,10 @@
   }
 }
 
-// .alert-alert {
-//   @extend .alert-danger !optional;
-// }
+.alert-alert {
+  @extend .alert-danger;
+}
+
+.alert-notice {
+  @extend .alert-success;
+}
