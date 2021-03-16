@@ -4,5 +4,3 @@ require:
 
 AllCops:
     NewCops: enable
-    Exclude:
-      - Gemfile

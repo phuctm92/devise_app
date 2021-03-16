@@ -38,7 +38,11 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 9999 }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # setup mailcatcher
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { host: 'localhost', port: 1025 }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
