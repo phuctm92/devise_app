@@ -7,18 +7,9 @@ nav.navbar.navbar-expand-lg.navbar-light.navbar-bg
     #navbarNav.collapse.navbar-collapse
       ul.nav.navbar-nav.ml-auto
         - if user_signed_in?
-          li.nav-item.active
-            = link_to root_path, class: 'nav-link'
-              | Home
           li.nav-item
             a.nav-link[href="#"]
-              | Message
-          li.nav-item
-            a.nav-link[href="#"]
-              | Notifications
-          li.nav-item
-            a.nav-link[href="#"]
-              | Profile
+              = "Hello, #{current_user.email}"
           li.nav-item
             = link_to destroy_user_session_path, method: :delete, class: 'nav-link'
               i.fas.fa-sign-out-alt
