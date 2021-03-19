@@ -11,9 +11,9 @@
         i.fab.fa-google-plus-g
         |  Sign in with Google+
   p style='text-align:center'
-    |  OR 
+    |  OR
   = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-signin' }) do |f|
-    = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email address', class: 'form-control', id: 'inputEmail'
+    = f.text_field :login, autofocus: true, placeholder: 'xxx', class: 'form-control'
     = f.password_field :password, autocomplete: "current-password", placeholder: 'Password', class: 'form-control', id: 'inputPassword'
     - if devise_mapping.rememberable?
       .row.align-items-center.remember

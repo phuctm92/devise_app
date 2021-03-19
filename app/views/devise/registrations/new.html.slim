@@ -3,6 +3,7 @@
     | Sign up
   = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form-signin' }) do |f|
     = render "devise/shared/error_messages", resource: resource
+    = f.text_field :username, autofocus: true, placeholder: 'Username', class: 'form-control'
     = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email address', class: 'form-control'
     = f.password_field :password, autocomplete: "new-password", placeholder: "Password (#{@minimum_password_length} characters minimum)", class: 'form-control'
     = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password confirmation", class: 'form-control'
