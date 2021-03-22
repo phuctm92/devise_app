@@ -29,9 +29,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
-  gem 'pry'
+  gem 'pry', '~> 0.14.0'
   gem 'pry-rails'
-  gem 'pry-nav'
   gem 'rubocop', '~> 1.10', require: false
   gem 'rubocop-performance', '~> 1.9', '>= 1.9.2', require: false
   gem 'rubocop-rails', '~> 2.9', '>= 2.9.1', require: false
