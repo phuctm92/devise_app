@@ -59,3 +59,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'slim-rails', '~> 3.2'
 gem 'devise', '~> 4.7', '>= 4.7.3'
+gem 'simple_form', '~> 5.1'
