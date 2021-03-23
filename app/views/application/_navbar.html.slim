@@ -8,8 +8,7 @@ nav.navbar.navbar-expand-lg.navbar-light.navbar-bg
       ul.nav.navbar-nav.ml-auto
         - if user_signed_in?
           li.nav-item
-            a.nav-link[href="#"]
-              = "Hello, #{current_user.email}"
+            = link_to  "Hello, #{current_user.email}", user_profile_path(current_user.username), class: 'nav-link'
           li.nav-item
             = link_to destroy_user_session_path, method: :delete, class: 'nav-link'
               i.fas.fa-sign-out-alt

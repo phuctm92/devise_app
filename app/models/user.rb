@@ -4,7 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
 
-  validates :username, presence: true, uniqueness: true
+  validates :username, presence: true,
+                       uniqueness: true,
+                       format: { with: /^[a-z0-9]+$/, message: 'Only allow lower-case letters and numbers.' }
 
   attr_accessor :login
 
